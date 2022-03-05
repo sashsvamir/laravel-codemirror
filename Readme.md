@@ -1,4 +1,4 @@
-## Codemirror with uploader
+## Codemirror
 
 This is component replace your textarea element to codemirror editor.
 
@@ -13,7 +13,7 @@ composer require sashsvamir/laravel-codemirror:"dev-main"
 
 
 
-### Codemirror
+### Setup
 
 To replace textarea by codemirror components, you should wrap textarea 
 element by codemirror component `<x-slbc::textarea-codemirror>`:
