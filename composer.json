@@ -1,0 +1,22 @@
+{
+    "name": "sashsvamir/laravel-codemirror",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sashsvamir\\LaravelCodemirror\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexander Shchukin",
+            "email": "1340068@gmail.com"
+        }
+    ],
+    "extra": {
+	    "laravel": {
+	        "providers": [
+	            "Sashsvamir\\LaravelCodemirror\\ServiceProvider"
+	        ]
+	    }
+	}
+}
