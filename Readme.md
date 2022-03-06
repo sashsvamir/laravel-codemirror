@@ -24,4 +24,14 @@ element by codemirror component `<x-slbc::textarea-codemirror>`:
 
 
 
+### Note
+
+If you want to save form data with ajax request, you must update hidden source textarea by running method `querySelectorAll()` on textarea element:
+```javascript
+form.querySelectorAll('textarea').forEach(textarea => {
+    if (textarea.updateFromWysiwyg) {
+        textarea.updateFromWysiwyg()
+    }
+})
+```
 

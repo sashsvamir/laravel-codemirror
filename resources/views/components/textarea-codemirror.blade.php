@@ -58,7 +58,7 @@
                 cm.setSize('100%', textareaHeight)
 
                 // add method to textarea for get text from codemirror
-                textarea.updateFromCodemirror = () => {
+                textarea.updateFromWysiwyg = () => {
                     cm.save()
                 }
             })
