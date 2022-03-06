@@ -1,3 +1,13 @@
+<?php
+/**
+ * @var $mode string|null
+ */
+?>
+
+@props([
+    'mode' => null,
+])
+
 @pushOnce('styles')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" rel="stylesheet">
 
@@ -40,8 +50,7 @@
                 // get textarea height before hidden
                 const textareaHeight = textarea.clientHeight
 
-                // create codemirror from textarea
-                const cm = CodeMirror.fromTextArea(textarea, {
+                const options = {
                     lineNumbers: true,
                     mode: 'htmlmixed',
                     indentWithTabs: false,
@@ -52,7 +61,14 @@
                     autoCloseBrackets: true,
                     autoCloseTags: true,
                     // foldGutter: true,
-                })
+                }
+
+                @if($mode)
+                    options.mode = '{{ $mode }}'
+                @endif
+
+                // create codemirror from textarea
+                const cm = CodeMirror.fromTextArea(textarea, options)
 
                 // make codemirror size same as textarea
                 cm.setSize('100%', textareaHeight)

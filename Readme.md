@@ -22,6 +22,12 @@ element by codemirror component `<x-slbc::textarea-codemirror>`:
 </x-slbc::textarea-codemirror>
 ```
 
+You can pass codemirror mode (see: https://codemirror.net/doc/manual.html#option_mode) with `mode` attribute:
+```html
+<x-slbc::textarea-codemirror mode="javascript">
+    <textarea name="body">const foo = 'bar';</textarea>
+</x-slbc::textarea-codemirror>
+```
 
 
 ### Note
