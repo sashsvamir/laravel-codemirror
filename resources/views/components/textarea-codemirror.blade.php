@@ -29,36 +29,41 @@
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/foldcode.min.js"></script>--}}
 
     <script>
-        /**
-         * Create CodeMirror from textarea
-         * @see: https://codemirror.net/doc/manual.html
-         */
-        document.querySelectorAll('[data-codemirror-wrapper] textarea').forEach(textarea => {
-            // get textarea height before hidden
-            const textareaHeight = textarea.clientHeight
+        // init on next cycle, to prevent lost focus after js frameworks (vue) rebuild dom
+        setTimeout(() => {
 
-            // create codemirror from textarea
-            const cm = CodeMirror.fromTextArea(textarea, {
-                lineNumbers: true,
-                mode: 'htmlmixed',
-                indentWithTabs: false,
-                indentUnit: 4,
-                smartIndent: false,
-                // tabSize: 4,
-                dragDrop: false,
-                autoCloseBrackets: true,
-                autoCloseTags: true,
-                // foldGutter: true,
+            /**
+             * Create CodeMirror from textarea
+             * @see: https://codemirror.net/doc/manual.html
+             */
+            document.querySelectorAll('[data-codemirror-wrapper] textarea').forEach(textarea => {
+                // get textarea height before hidden
+                const textareaHeight = textarea.clientHeight
+
+                // create codemirror from textarea
+                const cm = CodeMirror.fromTextArea(textarea, {
+                    lineNumbers: true,
+                    mode: 'htmlmixed',
+                    indentWithTabs: false,
+                    indentUnit: 4,
+                    smartIndent: false,
+                    // tabSize: 4,
+                    dragDrop: false,
+                    autoCloseBrackets: true,
+                    autoCloseTags: true,
+                    // foldGutter: true,
+                })
+
+                // make codemirror size same as textarea
+                cm.setSize('100%', textareaHeight)
+
+                // add method to textarea for get text from codemirror
+                textarea.updateFromCodemirror = () => {
+                    cm.save()
+                }
             })
 
-            // make codemirror size same as textarea
-            cm.setSize('100%', textareaHeight)
-
-            // add method to textarea for get text from codemirror
-            textarea.updateFromCodemirror = () => {
-                cm.save()
-            }
-        })
+        }, 0)
     </script>
 @endPushOnce
 
