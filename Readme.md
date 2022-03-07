@@ -1,11 +1,11 @@
-## Codemirror
+# Codemirror
 
 This is component replace your textarea element to codemirror editor.
 
 
 
 
-### Installation:
+## Installation:
 ```sh
 composer require sashsvamir/laravel-codemirror
 
@@ -30,7 +30,7 @@ You can pass codemirror mode (see: https://codemirror.net/doc/manual.html#option
 ```
 
 
-### Note
+## Note
 
 If you want to save form data with ajax request, you must update hidden source textarea by running method `querySelectorAll()` on textarea element:
 ```javascript
