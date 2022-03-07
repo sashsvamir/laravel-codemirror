@@ -1,5 +1,7 @@
 {
     "name": "sashsvamir/laravel-codemirror",
+    "description": "Turn your blade textarea component to Codemirror code editor in Laravel",
+    "keywords": ["laravel", "blade", "codemirror", "textarea", "wysiwyg"],
     "license": "MIT",
     "autoload": {
         "psr-4": {
