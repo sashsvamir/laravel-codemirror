@@ -8,7 +8,7 @@ This is component replace your textarea element to codemirror editor.
 ## Installation:
 ```sh
 composer require sashsvamir/laravel-codemirror
-
+```
 
 
 
