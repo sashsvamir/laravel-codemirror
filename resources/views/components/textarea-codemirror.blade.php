@@ -48,8 +48,8 @@
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/fold/comment-fold.min.js"></script>--}}
 
     <script>
-        // init on next cycle, to prevent lost focus after js frameworks (vue) rebuild dom
-        setTimeout(() => {
+        // init on dom loaded, to prevent lost focus after js frameworks (vue) rebuild dom
+        document.addEventListener('DOMContentLoaded', e => {
 
             /**
              * Create CodeMirror from textarea
@@ -95,7 +95,7 @@
                 }
             })
 
-        }, 0)
+        })
     </script>
 @endPushOnce
 
